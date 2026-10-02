@@ -1,0 +1,40 @@
+import type { DbWallet } from "@/mocks/db/schema"
+
+export const wallets: DbWallet[] = [
+  {
+    id: "wallet-001",
+    userId: "user-ana",
+    label: "Main MetaMask",
+    address: "0x9f3a1c2b4d5e6f708192a3b4c5d6e7f8091a2b3c",
+    provider: "metamask",
+    role: "primary",
+    networks: ["ethereum", "polygon", "arbitrum"],
+    connection: null,
+    createdAt: "2026-01-10T12:05:00.000Z",
+    updatedAt: "2026-01-10T12:05:00.000Z",
+  },
+  {
+    id: "wallet-002",
+    userId: "user-ana",
+    label: "Coinbase backup",
+    address: "0x1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e",
+    provider: "coinbase",
+    role: "secondary",
+    networks: ["ethereum", "base"],
+    connection: null,
+    createdAt: "2026-01-12T08:00:00.000Z",
+    updatedAt: "2026-01-12T08:00:00.000Z",
+  },
+  {
+    id: "wallet-003",
+    userId: "user-bruno",
+    label: "WalletConnect",
+    address: "0x7a8b9c0d1e2f30415263748596a7b8c9d0e1f2a3",
+    provider: "walletconnect",
+    role: "primary",
+    networks: ["ethereum", "polygon"],
+    connection: null,
+    createdAt: "2026-02-03T09:40:00.000Z",
+    updatedAt: "2026-02-03T09:40:00.000Z",
+  },
+]
