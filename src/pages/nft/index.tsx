@@ -32,6 +32,7 @@ function shorten(text: string): string {
 function toDescription(nft: NftDetail): ProductDescriptionData {
   return {
     reviewsLabel: `Avaliações de colecionadores (${nft.rating.count})`,
+    reviewsShortLabel: `Avaliações (${nft.rating.count})`,
     paragraphs: nft.description.split(/\n{2,}/).filter(Boolean),
     facts: [
       { label: "Rede:", value: `Cunhado na ${chainLabels[nft.chain]}.` },
@@ -41,12 +42,19 @@ function toDescription(nft: NftDetail): ProductDescriptionData {
   }
 }
 
+function formatTag(tag: string): string {
+  const text = tag.replace(/-/g, " ")
+  return text.charAt(0).toUpperCase() + text.slice(1)
+}
+
 function toMeta(nft: NftDetail): ProductInfoData["meta"] {
   const meta = [
     { label: "ID do token", value: nft.tokenId },
     { label: "Coleção", value: nft.collection },
   ]
-  if (nft.tags.length > 0) meta.push({ label: "Atributos", value: nft.tags.join(", ") })
+  if (nft.tags.length > 0) {
+    meta.push({ label: "Atributos", value: nft.tags.map(formatTag).join(", ") })
+  }
   return meta
 }
 
@@ -130,7 +138,7 @@ function NftDetailView({ nft }: { nft: NftDetail }) {
       .catch(() => undefined)
 
   return (
-    <div className="flex flex-col gap-12 pb-4 lg:gap-24 lg:pt-8 lg:pb-0">
+    <div className="flex flex-col lg:gap-24 lg:pt-8">
       <div className="lg:hidden">
         <MobileProductHero
           image={images[0] ?? { id: "0", url: nft.image.url, alt: nft.image.alt }}
@@ -172,8 +180,10 @@ function NftDetailView({ nft }: { nft: NftDetail }) {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-6 lg:contents">
+      <div className="bg-surface px-6 pb-8 lg:contents">
         <ProductDescription data={toDescription(nft)} reviews={<NftReviews nftId={nft.id} />} />
+      </div>
+      <div className="px-6 pt-12 lg:contents">
         <RelatedNfts title="Mais desta coleção" category={nft.category} exclude={[nft.id]} />
       </div>
       <MobileBuyBar

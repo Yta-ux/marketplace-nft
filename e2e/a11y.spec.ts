@@ -143,7 +143,7 @@ test.describe("semântica e feedback", () => {
   test("abas do detalhe funcionam por teclado com setas", async ({ page, gotoWithScenario }) => {
     await gotoWithScenario("/nfts/nft-001")
     const details = page.getByRole("tab", { name: "Detalhes do NFT" })
-    const reviews = page.getByRole("tab", { name: /Avaliações de colecionadores/ })
+    const reviews = page.getByRole("tab", { name: /Avaliações/ })
     await details.focus()
     await page.keyboard.press("ArrowRight")
     await expect(reviews).toBeFocused()

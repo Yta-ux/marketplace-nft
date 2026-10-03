@@ -11,7 +11,7 @@ export type ReviewCardData = {
 
 export function ReviewCard({ review }: { review: ReviewCardData }) {
   return (
-    <article className="flex flex-col gap-3 bg-surface p-4">
+    <article className="flex flex-col gap-3 bg-surface p-4 max-lg:rounded-[14px] max-lg:bg-surface-raised">
       <header className="flex items-center gap-3">
         <span
           aria-hidden="true"

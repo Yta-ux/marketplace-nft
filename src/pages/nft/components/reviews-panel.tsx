@@ -12,7 +12,7 @@ export type ReviewsPanelData = {
 export function ReviewsPanel({ data }: { data: ReviewsPanelData }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-6 bg-surface p-4 sm:flex-row sm:items-center sm:gap-12 sm:p-6">
+      <div className="flex flex-col gap-6 bg-surface p-4 max-lg:rounded-[14px] max-lg:bg-surface-raised sm:flex-row sm:items-center sm:gap-12 sm:p-6">
         <div className="flex flex-col gap-2">
           <p className="font-bold text-heading-lg leading-[normal] text-highlight">
             {data.average}

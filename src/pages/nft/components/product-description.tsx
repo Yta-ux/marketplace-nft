@@ -5,6 +5,7 @@ export type ProductDescriptionData = {
   paragraphs: string[]
   facts: { label: string; value: string }[]
   reviewsLabel: string
+  reviewsShortLabel: string
 }
 
 export function ProductDescription({
@@ -17,7 +18,10 @@ export function ProductDescription({
   const [tab, setTab] = useState("details")
 
   return (
-    <section aria-labelledby="description-heading" className="flex w-full flex-col gap-3">
+    <section
+      aria-labelledby="description-heading"
+      className="flex w-full flex-col gap-3 max-lg:border-t max-lg:border-border-soft max-lg:pt-6"
+    >
       <h2 id="description-heading" className="sr-only">
         Descrição e avaliações
       </h2>
@@ -28,7 +32,7 @@ export function ProductDescription({
         onChange={setTab}
         tabs={[
           { id: "details", label: "Detalhes do NFT" },
-          { id: "reviews", label: data.reviewsLabel },
+          { id: "reviews", label: data.reviewsLabel, shortLabel: data.reviewsShortLabel },
         ]}
       />
       <div

@@ -1,7 +1,7 @@
 import type { KeyboardEvent } from "react"
 import { cn } from "@/lib/utils"
 
-export type UnderlineTab = { id: string; label: string }
+export type UnderlineTab = { id: string; label: string; shortLabel?: string }
 
 type UnderlineTabsProps = {
   tabs: UnderlineTab[]
@@ -42,7 +42,7 @@ export function UnderlineTabs({
         role="tablist"
         aria-label={label}
         onKeyDown={onKeyDown}
-        className="flex flex-wrap gap-x-8"
+        className="flex gap-x-8 max-sm:gap-x-0"
       >
         {tabs.map((tab) => {
           const active = tab.id === value
@@ -57,13 +57,20 @@ export function UnderlineTabs({
               tabIndex={active ? 0 : -1}
               onClick={() => onChange(tab.id)}
               className={cn(
-                "relative pr-2 pb-3 text-label leading-4",
+                "relative pr-2 pb-3 text-label leading-4 max-sm:flex-1 max-sm:pr-0 max-sm:text-center max-sm:text-body",
                 active
                   ? "font-bold text-highlight after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-primary"
                   : "font-normal text-foreground hover:text-highlight",
               )}
             >
-              {tab.label}
+              {tab.shortLabel ? (
+                <>
+                  <span className="sm:hidden">{tab.shortLabel}</span>
+                  <span className="max-sm:hidden">{tab.label}</span>
+                </>
+              ) : (
+                tab.label
+              )}
             </button>
           )
         })}

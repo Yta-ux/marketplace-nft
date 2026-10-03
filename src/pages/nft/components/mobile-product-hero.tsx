@@ -1,6 +1,5 @@
 import { useRouter } from "@tanstack/react-router"
 import { CircleButton } from "@/components/circle-button"
-import { Icon } from "@/components/icon"
 import { type EditionOption, EditionPills } from "@/pages/nft/components/edition-pills"
 import { ReviewPill } from "@/pages/nft/components/review-pill"
 
@@ -21,7 +20,8 @@ export function MobileProductHero({ image, onFavorite, favorited }: MobileProduc
         <div className="flex items-center justify-between">
           <CircleButton icon="arrow-left" label="Voltar" onClick={() => router.history.back()} />
           <CircleButton
-            icon="heart-mobile"
+            icon={favorited ? "heart-filled-mobile" : "heart-mobile"}
+            iconClassName={favorited ? "animate-heart-fill" : undefined}
             label={favorited ? "Remover dos favoritos" : "Adicionar aos favoritos"}
             aria-pressed={favorited}
             onClick={onFavorite}
@@ -36,7 +36,6 @@ export function MobileProductHero({ image, onFavorite, favorited }: MobileProduc
           className="h-[356px] w-full rounded-hero object-cover"
         />
       </div>
-      <Icon name="hero-dots" className="absolute top-[365px] left-1/2 -translate-x-1/2" />
     </section>
   )
 }
