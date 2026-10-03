@@ -39,3 +39,4 @@ dist-ssr
 # Generated
 /.tanstack/
 /test-results-*/
+.vercel
