@@ -29,7 +29,7 @@ export default defineConfig({
     {
       name: "mobile-chromium",
       use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },
-      testIgnore: /(contracts|account)\.spec\.ts/,
+      testIgnore: /contracts\.spec\.ts/,
     },
   ],
   webServer: {
