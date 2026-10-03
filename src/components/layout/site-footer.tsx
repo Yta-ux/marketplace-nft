@@ -148,11 +148,15 @@ export function SiteFooter({ className }: { className?: string }) {
                 <h2 className="font-bold text-title-sm leading-4 text-foreground">
                   Carteiras compatíveis
                 </h2>
-                <ul className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-sm border border-border-soft bg-surface-dark px-3 py-2 text-center font-bold text-tiny tracking-[0.1px] text-highlight">
+                <ul className="flex max-w-[280px] items-center justify-between gap-1 rounded-sm border border-border-soft bg-surface-dark px-2 py-2 font-bold text-tiny tracking-[0] whitespace-nowrap text-highlight">
                   {["METAMASK", "WALLETCONNECT", "COINBASE"].map((wallet, index) => (
-                    <li key={wallet} className="flex items-center gap-2">
-                      {index > 0 && <span aria-hidden="true">•</span>}
+                    <li key={wallet} className="flex items-center gap-1">
                       {wallet}
+                      {index < 2 && (
+                        <span aria-hidden="true" className="pl-1">
+                          •
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>
