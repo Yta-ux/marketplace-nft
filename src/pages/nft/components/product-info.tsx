@@ -97,7 +97,10 @@ export function ProductInfo({
             aria-pressed={favorited}
             onClick={onFavorite}
           >
-            <Icon name="heart-outline" />
+            <Icon
+              name={favorited ? "heart-filled-lg" : "heart-outline"}
+              className={favorited ? "animate-heart-fill" : undefined}
+            />
             {favorited ? "Favoritado" : "Favoritar"}
           </Button>
         </div>

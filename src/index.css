@@ -132,6 +132,18 @@
   --shadow-glow: 0 0 20px rgb(240 128 95 / 0.4);
   --shadow-card: 0 14px 32px rgb(10 6 4 / 0.6);
   --animate-shimmer: shimmer 1.6s linear infinite;
+  --animate-heart-fill: heart-fill 450ms cubic-bezier(0.22, 0.8, 0.3, 1) both;
+
+  @keyframes heart-fill {
+    from {
+      clip-path: inset(100% 0 0 0);
+      opacity: 0.25;
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+  }
 
   @keyframes shimmer {
     from {

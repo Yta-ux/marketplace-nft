@@ -51,7 +51,8 @@ export function NftCard({
               onClick={() => onAddToCart(nft)}
             />
             <CardActionButton
-              icon="heart-sm"
+              icon={favorited ? "heart-filled-md" : "heart-sm"}
+              iconClassName={favorited ? "animate-heart-fill" : undefined}
               label={`Favoritar ${nft.name}`}
               aria-pressed={favorited}
               onClick={() => onToggleFavorite(nft)}
@@ -66,6 +67,14 @@ export function NftCard({
               <Icon name="search-sm" />
             </Link>
           </div>
+        )}
+        {favorited && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute top-3 right-3 hidden size-7 items-center justify-center rounded-full border border-border bg-surface-raised lg:flex"
+          >
+            <Icon name="heart-filled" className="animate-heart-fill" />
+          </span>
         )}
         {onToggleFavorite && (
           <FavoriteButton

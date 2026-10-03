@@ -31,6 +31,7 @@ import favorite from "@/assets/icons/favorite.svg"
 import favoriteLg from "@/assets/icons/favorite-lg.svg"
 import filter from "@/assets/icons/filter.svg"
 import iconGoogle from "@/assets/icons/google.svg"
+import heartFilled from "@/assets/icons/heart-filled.svg"
 import iconHeartMobile from "@/assets/icons/heart-mobile.svg"
 import heartOutline from "@/assets/icons/heart-outline.svg"
 import iconHeroDots from "@/assets/icons/hero-dots.svg"
@@ -178,6 +179,10 @@ const icons = {
   delete: { src: deleteIcon, box: [24, 24], size: [17.65, 19.98], offset: [3.46, 1.96] },
   "favorite-lg": { src: favoriteLg, box: [30, 30], size: [30, 30], offset: [0, 0] },
   "heart-outline": { src: heartOutline, box: [20, 20], size: [20, 20], offset: [0, 0] },
+  "heart-filled": { src: heartFilled, box: [16, 16], size: [16, 16], offset: [0, 0] },
+  "heart-filled-md": { src: heartFilled, box: [18, 18], size: [18, 18], offset: [0, 0] },
+  "heart-filled-lg": { src: heartFilled, box: [20, 20], size: [20, 20], offset: [0, 0] },
+  "heart-filled-mobile": { src: heartFilled, box: [16, 16], size: [16, 16], offset: [0, 0] },
   minus: { src: minus, box: [16, 16], size: [16, 16], offset: [0, 0] },
   "minus-lg": { src: minusLg, box: [26.4, 26.4], size: [26.4, 26.4], offset: [0, 0] },
   plus: { src: plus, box: [16, 16], size: [16, 16], offset: [0, 0] },

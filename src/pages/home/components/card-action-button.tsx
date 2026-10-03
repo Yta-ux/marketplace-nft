@@ -4,10 +4,17 @@ import { cn } from "@/lib/utils"
 
 type CardActionButtonProps = Omit<ComponentProps<"button">, "children"> & {
   icon: IconName
+  iconClassName?: string
   label: string
 }
 
-export function CardActionButton({ icon, label, className, ...props }: CardActionButtonProps) {
+export function CardActionButton({
+  icon,
+  iconClassName,
+  label,
+  className,
+  ...props
+}: CardActionButtonProps) {
   return (
     <button
       type="button"
@@ -19,7 +26,7 @@ export function CardActionButton({ icon, label, className, ...props }: CardActio
       )}
       {...props}
     >
-      <Icon name={icon} />
+      <Icon name={icon} className={iconClassName} />
     </button>
   )
 }

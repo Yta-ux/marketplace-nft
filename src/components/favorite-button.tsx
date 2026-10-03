@@ -29,6 +29,14 @@ export function FavoriteButton({
       )}
     >
       <Icon name={size === "lg" ? "favorite-lg" : "favorite"} />
+      {pressed && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-px flex items-center justify-center rounded-full bg-surface-raised"
+        >
+          <Icon name="heart-filled" className="animate-heart-fill" />
+        </span>
+      )}
     </button>
   )
 }

@@ -4,10 +4,17 @@ import { cn } from "@/lib/utils"
 
 type CircleButtonProps = Omit<ComponentProps<"button">, "children"> & {
   icon: IconName
+  iconClassName?: string
   label: string
 }
 
-export function CircleButton({ icon, label, className, ...props }: CircleButtonProps) {
+export function CircleButton({
+  icon,
+  iconClassName,
+  label,
+  className,
+  ...props
+}: CircleButtonProps) {
   return (
     <button
       type="button"
@@ -18,7 +25,7 @@ export function CircleButton({ icon, label, className, ...props }: CircleButtonP
       )}
       {...props}
     >
-      <Icon name={icon} />
+      <Icon name={icon} className={iconClassName} />
     </button>
   )
 }
