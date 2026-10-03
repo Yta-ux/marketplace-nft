@@ -182,4 +182,6 @@ Configuração em `lighthouse/lighthouserc.cjs` (3 execuções por página e per
 - **Handshake e heartbeat:** `@mswjs/socket.io-binding@0.2.0` responde ao handshake sozinho, sem expor o `auth` do CONNECT e sem enviar pings. O servidor simulado lê o pacote `40{...}` cru para ligar a conexão ao token e envia ping a cada 20 s. O binding não tem rooms nem namespaces; o roteamento por usuário usa o registro de conexões.
 - **Queda simulada:** durante uma queda (`/__mocks/socket/disconnect`) novas conexões são fechadas com o código 4000; o `socket.io-client` só trata isso como falha após o `timeout` de conexão, reduzido para 5 s.
 - **Uma aba:** cada aba carrega o banco do `localStorage` ao iniciar; abas abertas ao mesmo tempo não sincronizam entre si.
+- **Abas em segundo plano:** o servidor Socket.IO simulado roda na própria página; o navegador pode adiar os timers dele (heartbeat de 20 s) numa aba oculta, e o cliente então reconecta sozinho, com o aviso "Reconectando ao tempo real…" e a reconciliação pelo REST.
+- **Demo publicada:** https://marketplace-nft-tan.vercel.app/ (build de produção na Vercel, com o rewrite de SPA do `vercel.json`).
 - **Performance mobile:** ver a seção de Lighthouse.

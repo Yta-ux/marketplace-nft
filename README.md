@@ -2,6 +2,8 @@
 
 Marketplace de NFTs em React + TypeScript com APIs, sessão, carteiras, pagamentos e eventos em tempo real simulados via MSW. Arquitetura, decisões, desvios do Figma, acessibilidade e resultados do Lighthouse: [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
+**Demo publicada:** https://marketplace-nft-tan.vercel.app/ (mocks e tempo real ativos; credenciais fictícias abaixo)
+
 ## Requisitos
 
 - Node.js ≥ 22
