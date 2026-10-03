@@ -1,0 +1,11 @@
+import { createFileRoute, Outlet, redirect } from "@tanstack/react-router"
+import { credentials } from "@/api/credentials"
+
+export const Route = createFileRoute("/_authenticated")({
+  beforeLoad: ({ location }) => {
+    if (!credentials.getToken()) {
+      throw redirect({ to: "/login", search: { redirect: location.href } })
+    }
+  },
+  component: Outlet,
+})
