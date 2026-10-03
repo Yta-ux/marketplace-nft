@@ -20,6 +20,7 @@ function RootLayout() {
   const pathname = useRouterState({ select: (state) => state.location.pathname })
   const market = /^\/(nfts|cart|checkout|orders)(\/|$)/.test(pathname)
   const detail = /^\/nfts(\/|$)/.test(pathname)
+  const account = /^\/(profile|wallets)(\/|$)/.test(pathname)
   const focused = /^\/(cart|checkout|orders|login|register)(\/|$)/.test(pathname)
   return (
     <>
@@ -50,9 +51,11 @@ function RootLayout() {
               <Outlet />
             </div>
           </main>
-          <Reveal className={cn("mt-24", focused && "max-lg:hidden")}>
-            <SiteFooter />
-          </Reveal>
+          {!account && (
+            <Reveal className={cn("mt-24", focused && "max-lg:hidden")}>
+              <SiteFooter />
+            </Reveal>
+          )}
         </div>
         {!(detail || focused) && <MobileTabBar cartCount={cartCount} className="lg:hidden" />}
       </div>

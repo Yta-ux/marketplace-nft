@@ -136,7 +136,7 @@ export function SiteFooter({ className }: { className?: string }) {
                         type="button"
                         aria-label={social.label}
                         onClick={() => notifyUnavailable(`Perfil no ${social.label}`)}
-                        className="block rounded-sm"
+                        className="block rounded-sm transition-[background-color,box-shadow] duration-200 hover:bg-primary/15 hover:shadow-glow"
                       >
                         <Icon name={social.icon} />
                       </button>
@@ -148,9 +148,14 @@ export function SiteFooter({ className }: { className?: string }) {
                 <h2 className="font-bold text-title-sm leading-4 text-foreground">
                   Carteiras compatíveis
                 </h2>
-                <p className="flex min-h-[26px] items-center justify-center rounded-sm border border-border-soft bg-surface-dark py-2 pl-2 text-center font-bold text-tiny tracking-[0.1px] whitespace-pre-wrap text-highlight">
-                  {"METAMASK  •  WALLETCONNECT  •  COINBASE"}
-                </p>
+                <ul className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-sm border border-border-soft bg-surface-dark px-3 py-2 text-center font-bold text-tiny tracking-[0.1px] text-highlight">
+                  {["METAMASK", "WALLETCONNECT", "COINBASE"].map((wallet, index) => (
+                    <li key={wallet} className="flex items-center gap-2">
+                      {index > 0 && <span aria-hidden="true">•</span>}
+                      {wallet}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
