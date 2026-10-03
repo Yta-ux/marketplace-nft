@@ -1,0 +1,74 @@
+[
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_51_25.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_51_25.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_52_02.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_52_02.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:4173/nfts/nft-001",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_20.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_20.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:4173/nfts/nft-001",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_36.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_36.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:4173/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_51_44.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost--2026_10_03_14_51_44.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:4173/nfts/nft-001",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_52.report.html",
+    "jsonPath": "/home/italo-gustavo/Documentos/Projects/marketplace-nft/lighthouse/reports/desktop/localhost-nfts_nft_001-2026_10_03_14_52_52.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  }
+]
